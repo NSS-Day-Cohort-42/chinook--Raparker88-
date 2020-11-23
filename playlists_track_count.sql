@@ -2,11 +2,10 @@
 -- The Playlist name should be include on the resulant table.
 
 SELECT 
-COUNT(*) numberOfTracks,
-p.name,
-p.playListId
+COUNT(pt.trackId) numberOfTracks,
+p.name
 FROM Playlist p
 JOIN PlaylistTrack pt ON pt.playlistId = p.playlistId 
-GROUP BY p.playlistId;
+GROUP BY  p.name;
 
 ;
