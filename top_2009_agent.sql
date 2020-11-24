@@ -8,7 +8,7 @@ MAX(e.totalSales),
 e.agentFullName
 from(
     SELECT 
-    SUM(i.total) totalSales,
+    ROUND(SUM(i.total), 1) totalSales,
     e.firstName || ' ' || e.lastName agentFullName
     FROM Invoice i
     JOIN customer c ON i.customerId = c.customerId
